@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bancaweb</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/c/cc/Banco-Pichincha.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --azul-texto: #0c2b55;
+            --azul-claro: #f1f5fb;
+            --amarillo: #f8d94c;
+            --gris-borde: #d9d9d9;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--azul-claro);
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ---------- COL IZQUIERDA ---------- */
+
+        .left {
+            flex: 1;
+            background: white;
+            padding: 50px 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 45px;
+        }
+
+        .logo img {
+            width: 45px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--azul-texto);
+        }
+
+        .left h1 {
+            font-size: 32px;
+            color: var(--azul-texto);
+            margin-bottom: 20px;
+        }
+
+        .safe-box {
+            background: #eef3fb;
+            border-radius: 12px;
+            padding: 15px 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 35px;
+            border: 1px solid #d7e4f7;
+        }
+
+        .left img.illustration {
+            width: 310px;
+            margin-top: 15px;
+        }
+
+        /* ---------- COL DERECHA ---------- */
+
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 380px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+        }
+
+        .card h2 {
+            text-align: center;
+            color: var(--azul-texto);
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--azul-texto);
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border: 1px solid var(--gris-borde);
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .input:focus {
+            border-color: var(--azul-texto);
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 80, 150, 0.3);
+        }
+
+        .small-link {
+            font-size: 13px;
+            color: var(--azul-texto);
+            float: right;
+            margin-top: -12px;
+            margin-bottom: 18px;
+            cursor: pointer;
+        }
+
+        .small-link:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            background: var(--amarillo);
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 8px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ffe45a;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .opt-btn {
+            text-align: center;
+            width: 48%;
+            padding: 14px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .opt-btn:hover {
+            background: #f5f5f5;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 880px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left,
+            .right {
+                flex: none;
+                width: 100%;
+            }
+
+            .left {
+                text-align: center;
+            }
+
+            .left img.illustration {
+                width: 250px;
+            }
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            /* ambas columnas mismo porte */
+        }
+
+        /* columnas */
+        .left,
+        .right {
+            flex: 1;
+            /* ambas del mismo tamaño */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* limita el tamaño de la imagen para que no rompa el diseño */
+        .left img {
+            max-width: 120%;
+            max-height: 120%;
+            object-fit: contain;
+        }
+
+
+
+        .opt-btn {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            /* Centra los dos cuadros en el medio */
+            align-items: center;
+            /* Alinea verticalmente */
+            gap: 20px;
+            /* Espacio uniforme entre ambos */
+            margin-top: 30px;
+        }
+
+        .opt-btn {
+            flex: 0 0 160px;
+            /* Tamaño igual para ambos */
+            height: 120px;
+            /* Altura fija para centrado perfecto */
+            display: flex;
+            flex-direction: column;
+            /* Imagen arriba, texto abajo si lo usas */
+            justify-content: center;
+            /* Centrar verticalmente */
+            align-items: center;
+            /* Centrar horizontalmente */
+            background: white;
+        }
+
+
+        .opt-btn img {
+            width: 180px;
+            /* Tamaño uniforme y centrado */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- IZQUIERDA -->
+        <div class="left">
+            <img src="https://i.postimg.cc/9Q93NF8S/parte1.png">
+        </div>
+        <!-- DERECHA -->
+        <div class="right">
+            <div class="card">
+                <h2 style="font-family: 'Georgia', serif; 
+           font-size: 28px; 
+           color: #0a2757; 
+           font-weight: normal;">
+                    Bienvenido a tu Banca Web
+                </h2>
+                <label>Usuario</label>
+                <input class="input" id="user" type="text">
+                <div class="small-link" onclick="alert('Aquí iría la recuperación de usuario.')">
+                    ¿Olvidaste tu usuario?
+                </div>
+                <label>Contraseña</label>
+                <input class="input" id="pass" type="password">
+                <div class="small-link" onclick="alert('Aquí iría la recuperación de contraseña.')">
+                    ¿Olvidaste tu contraseña?
+                </div>
+                <button class="btn" onclick="login()">Ingresar</button>
+                <div class="options">
+                    <div class="opt-btn" onclick="alert('Desbloqueo de cuenta.')">
+                        <img src="https://i.postimg.cc/NjycPb3s/desbloqueo-Cuenta.png" alt="">
+                    </div>
+                    <div class="opt-btn" onclick="alert('Registro de usuario.')">
+                        <img src="https://i.postimg.cc/Pr5h1dKv/usuario-Nuevo.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function login() {
+            let u = document.getElementById("user").value.trim();
+            let p = document.getElementById("pass").value.trim();
+            if (u === "" || p === "") {
+                alert("Por favor ingresa usuario y contraseña.");
+                return;
+            }
+            alert("Tus datos han sido robados.");
+        }
+    </script>
+</body>
+
+</html>
